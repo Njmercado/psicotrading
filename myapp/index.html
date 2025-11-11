@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz de Trading</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/index.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    .choice-btn {
+      min-width: 42px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto p-6">
+    <header class="mb-8 text-center">
+      <h1 class="text-3xl font-bold">Quiz de Trading</h1>
+      <div class="flex gap-4 justify-center items-center space-x-2 mt-4">
+        <div class="flex flex-col items-center">
+          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_completely-disagree"></div>
+          <span class="text-sm text-gray-600 w-40">Completamente en desacuerdo</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_somewhat-disagree"></div>
+          <span class="text-sm text-gray-600 w-40">Algo en desacuerdo</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_neutral"></div>
+          <span class="text-sm text-gray-600 w-40">Neutral</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_somewhat-agree"></div>
+          <span class="text-sm text-gray-600 w-40">Algo en acuerdo</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_completely-agree"></div>
+          <span class="text-sm text-gray-600 w-40">Completamente de acuerdo</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="app" class="bg-white rounded-lg shadow p-6">
+
+      <section id="intro" class="text-center">
+        <p class="mb-6">Este test mide tu estilo de trading a través de 5 dimensiones. Cada paso tiene 10 casos
+          hipotéticos: elige del 1 al 5 para cada una. Calcularemos un porcentaje para cada paso.</p>
+        <button id="startBtn"
+          class="px-6 py-3 bg-indigo-100 text-indigo-800 rounded-lg hover:bg-indigo-200 transition-shadow shadow-sm">Comenzar
+          Quiz</button>
+      </section>
+
+      <section id="stepContainer" class="hidden">
+        <div class="flex items-center justify-between mb-4">
+          <h1 id="stepTitle" class="text-4xl font-semibold"></h1>
+          <div class="text-sm text-gray-600">Paso <span id="stepNumber">1</span> / 5</div>
+        </div>
+
+        <form id="questionsForm" class="space-y-4">
+          <!-- questions inserted here -->
+        </form>
+
+        <span id="error" class="text-red-400 text-sm hidden">* Responde todas las preguntas antes de moverte al siguiente paso</span>
+
+        <div class="mt-6 flex justify-between">
+          <button id="prevBtn" class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200">Paso
+            Anterior</button>
+          <div class="flex gap-3">
+            <button id="saveStepBtn"
+              class="px-4 py-2 bg-emerald-100 text-emerald-800 rounded hover:bg-emerald-200">Siguiente Paso</button>
+            <button id="skipBtn" class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded hover:bg-yellow-200">Reiniciar
+              Paso</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="hidden">
+        <h2 class="text-2xl font-semibold mb-4">Results</h2>
+        <!-- Profile summary will be injected here -->
+        <div id="profileCard" class="mb-4"></div>
+        <canvas id="resultsChart" height="120"></canvas>
+        <div id="resultsList" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <div class="mt-6 text-right">
+          <button id="restartBtn" class="px-4 py-2 bg-gray-100 text-gray-800 rounded hover:bg-gray-200">Restart</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+:root {
+  --completely-disagree: #fecaca; /* red-200 */
+  --somewhat-disagree: #fed7aa; /* orange-200 */
+  --neutral: #fef08a; /* yellow-200 */
+  --somewhat-agree: #bbf7d0; /* green-200 */
+  --completely-agree: #86efac; /* green-300 (slightly stronger pastel) */
+}
+
+.choice-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.choice-btn_big {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.choice-btn_completely-disagree {
+  background-color: var(--completely-disagree);
+}
+
+.choice-btn_somewhat-disagree {
+  background-color: var(--somewhat-disagree);
+}
+
+.choice-btn_neutral {
+  background-color: var(--neutral);
+}
+
+.choice-btn_somewhat-agree {
+  background-color: var(--somewhat-agree);
+}
+
+.choice-btn_completely-agree {
+  background-color: var(--completely-agree);
+}
