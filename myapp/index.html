@@ -25,26 +25,26 @@
   <div class="max-w-4xl mx-auto p-6">
     <header class="mb-8 text-center">
       <h1 class="text-3xl font-bold">Quiz de Trading</h1>
-      <div class="flex gap-4 justify-center items-center space-x-2 mt-4">
+      <div class="grid grid-cols-5 gap-4 justify-center mt-4">
         <div class="flex flex-col items-center">
-          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_completely-disagree"></div>
-          <span class="text-sm text-gray-600 w-40">Completamente en desacuerdo</span>
+          <div class="rounded-full border border-gray-100 p-4 choice-btn choice-btn_completely-disagree"></div>
+          <span class="text-xs text-gray-600 w-30">Completamente en desacuerdo</span>
         </div>
         <div class="flex flex-col items-center">
-          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_somewhat-disagree"></div>
-          <span class="text-sm text-gray-600 w-40">Algo en desacuerdo</span>
+          <div class="rounded-full border border-gray-100 p-4 choice-btn choice-btn_somewhat-disagree"></div>
+          <span class="text-xs text-gray-600 w-30">Desacuerdo</span>
         </div>
         <div class="flex flex-col items-center">
-          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_neutral"></div>
-          <span class="text-sm text-gray-600 w-40">Neutral</span>
+          <div class="rounded-full border border-gray-100 p-4 choice-btn choice-btn_neutral"></div>
+          <span class="text-xs text-gray-600 w-30">Neutral</span>
         </div>
         <div class="flex flex-col items-center">
-          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_somewhat-agree"></div>
-          <span class="text-sm text-gray-600 w-40">Algo en acuerdo</span>
+          <div class="rounded-full border border-gray-100 p-4 choice-btn choice-btn_somewhat-agree"></div>
+          <span class="text-xs text-gray-600 w-30">De acuerdo</span>
         </div>
         <div class="flex flex-col items-center">
-          <div class="rounded-full border border-gray-100 p-4 choice-btn_big choice-btn_completely-agree"></div>
-          <span class="text-sm text-gray-600 w-40">Completamente de acuerdo</span>
+          <div class="rounded-full border border-gray-100 p-4 choice-btn choice-btn_completely-agree"></div>
+          <span class="text-xs text-gray-600 w-30">Completamente de acuerdo</span>
         </div>
       </div>
     </header>
@@ -60,10 +60,11 @@
       </section>
 
       <section id="stepContainer" class="hidden">
-        <div class="flex items-center justify-between mb-4">
-          <h1 id="stepTitle" class="text-4xl font-semibold"></h1>
-          <div class="text-sm text-gray-600">Paso <span id="stepNumber">1</span> / 5</div>
+        <div class="text-sm text-gray-600 my-2 align-right">
+          <div class="bg-green-200 p-2 rounded-md w-[80px]"">
+            </span>Paso <span id="stepNumber">1</span> / 5</div>
         </div>
+        <h1 id="stepTitle" class="text-4xl font-semibold text-center my-4"></h1>
 
         <form id="questionsForm" class="space-y-4">
           <!-- questions inserted here -->

@@ -92,7 +92,7 @@ function renderStep(step) {
   const qs = QUESTIONS[`step${step}`].questions;
   qs.forEach((qObj, i) => {
     const field = document.createElement('div');
-    field.className = 'p-4 border rounded-lg bg-gray-50 flex items-center justify-between gap-4';
+    field.className = 'p-4 border rounded-lg bg-gray-50 flex flex-col md:flex-row items-center justify-between gap-4';
     const question = document.createElement('div');
     question.className = 'flex-1';
     question.innerHTML = `<i class="text-sm text-gray-600">${escapeHtml(qObj)}</i>`;
@@ -237,9 +237,6 @@ function determineProfile(results) {
     TOLERANCIA: results.TOLERANCIA || 0,
     SESGOS: results.SESGOS || 0,
   };
-
-  console.log('Profile results: ', results);
-  console.log('User traits:', traits);
 
   let best = null;
   for (const profile of PROFILES) {
